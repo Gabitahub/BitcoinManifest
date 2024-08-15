@@ -1,0 +1,107 @@
+{
+    "Home": {
+        "Hero": {
+            "prehead": "We believe in",
+            "preheadSigned": "CONGRATS",
+            "headSigned": "THANK YOU FOR SIGNING",
+            "signButton": "Join us with your 𝕏 account",
+            "head": {
+                "0": {
+                    "key": 0,
+                    "value": "Freedom"
+                },
+                "1": {
+                    "key": 1,
+                    "value": "Hard Money"
+                },
+                "2": {
+                    "key": 2,
+                    "value": "Fixed Scarcity"
+                },
+                "3": {
+                    "key": 3,
+                    "value": "Decentralization"
+                },
+                "4": {
+                    "key": 4,
+                    "value": "Financial Inclusion"
+                },
+                "5": {
+                    "key": 5,
+                    "value": "Individual Sovereignty"
+                },
+                "6": {
+                    "key": 6,
+                    "value": "Empowering the People"
+                },
+                "7": {
+                    "key": 7,
+                    "value": "The truth in math"
+                },
+                "8": {
+                    "key": 8,
+                    "value": "The certainty in code"
+                },
+                "9": {
+                    "key": 9,
+                    "value": "Verifying against trusting"
+                },
+                "10": {
+                    "key": 10,
+                    "value": "Digital Identities"
+                },
+                "11": {
+                    "key": 11,
+                    "value": "Self Custody"
+                },
+                "12": {
+                    "key": 12,
+                    "value": "Anonymous Transactions"
+                },
+                "13": {
+                    "key": 13,
+                    "value": "The right for privacy"
+                },
+                "14": {
+                    "key": 14,
+                    "value": "Freedom of speech"
+                },
+                "15": {
+                    "key": 15,
+                    "value": "Code as speech"
+                },
+                "16": {
+                    "key": 16,
+                    "value": "BITCOIN"
+                }
+            },
+            "shareButtonLabel": "Share on 𝕏",
+            "shareButtonLinkText": "I've just signed the #BitcoinManifest! Are you a Bitcoin Supporter? Did you get your invite already?"
+        },
+        "Manifest": {
+            "title": "We are",
+            "button": "Join us with your 𝕏 account",
+            "body": "Who promote hard money based in code, math and energy;<br>Who defend the right of privacy, anonymity and freedom;<br> Who empower through decentralized property and financial inclusion;<br><b>WE ARE THE BITCOIN SUPPORTERS.<b/>"
+        },
+        "Supporters": {
+            "idea": "Idea",
+            "powered": "Powered by"
+        },
+        "LargestB": {
+            "title": "World’s Largest Human Bitcoin Logo",
+            "button": "Download HighRes video footage and photos",
+            "body": "In 2023, in times of active attacks to bitcoin’s freedom through travel rules, KYCs and the spring of CBDCs, the Argentinean Bitcoin NGO gathered over 500 Bitcoin enthusiasts to create the first ever and “World´s Biggest Bitcoin Logo” in defense and as a shout out of the Bitcoin Revolution and the pillars of it’s monetary freedom with hundreds of orange umbrellas forming a 40 meters tall Bitcoin Logo."
+        },
+        "InvalidInvite": {
+            "title": "Invalid Invite",
+            "description": "You cannot sign without a valid invite"
+        },
+        "InvitesDialog": {
+            "title": "Invite your friends to join",
+            "subtitle": "Invite your friends",
+            "description": "All invited people will be granted with access to the site.",
+            "inputActionLabel": "Copy",
+            "footer": "Take into account, you can only invite three people to join our community. {invalidInvites} invite has been taken"
+        }
+    }
+}

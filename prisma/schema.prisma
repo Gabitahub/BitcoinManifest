@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model UrlToken {
+  id            Int          @id @default(autoincrement())
+  token         String       @unique @db.VarChar(255)
+  createdAt     DateTime     @default(now()) @db.Timestamp(6)
+  updatedAt     DateTime?    @updatedAt
+  status        TOKEN_STATUS @default(VALID)
+  userId        Int
+  takenByUserId Int?         @unique
+  Owner         User         @relation("owner", fields: [userId], references: [id])
+  TakenBy       User?        @relation("takenBy", fields: [takenByUserId], references: [id])
+}
+
+model User {
+  id          Int        @id @default(autoincrement())
+  name        String?    @db.VarChar(255)
+  displayName String?    @db.VarChar(255)
+  image       String?    @db.VarChar(255)
+  sid         String     @unique @db.VarChar(255)
+  sub         String     @unique @db.VarChar(255)
+  TakenToken  UrlToken?  @relation("takenBy")
+  UrlTokens   UrlToken[] @relation("owner")
+}
+
+enum TOKEN_STATUS {
+  VALID
+  INVALID
+  EXPIRED
+}

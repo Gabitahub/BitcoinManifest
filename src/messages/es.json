@@ -1,0 +1,107 @@
+{
+  "Home": {
+    "Hero": {
+      "prehead": "Nosotros creemos en",
+      "preheadSigned": "FELICIDADES",
+      "headSigned": "GRACIAS POR FIRMAR",
+      "signButton": "Únetenos con tu cuenta de 𝕏",
+      "head": {
+        "0": {
+          "key": 0,
+          "value": "La libertad"
+        },
+        "1": {
+          "key": 1,
+          "value": "El dinero fuerte"
+        },
+        "2": {
+          "key": 2,
+          "value": "La escasez programada"
+        },
+        "3": {
+          "key": 3,
+          "value": "La descentralización"
+        },
+        "4": {
+          "key": 4,
+          "value": "La inclusión financiera"
+        },
+        "5": {
+          "key": 5,
+          "value": "La soberanía individual"
+        },
+        "6": {
+          "key": 6,
+          "value": "El empoderamiento del individuo"
+        },
+        "7": {
+          "key": 7,
+          "value": "La certeza de la matemática"
+        },
+        "8": {
+          "key": 8,
+          "value": "La certeza del código"
+        },
+        "9": {
+          "key": 9,
+          "value": "La verificación pública"
+        },
+        "10": {
+          "key": 10,
+          "value": "La identidad digital"
+        },
+        "11": {
+          "key": 11,
+          "value": "La autocustodia"
+        },
+        "12": {
+          "key": 12,
+          "value": "Las transacciones anónimas"
+        },
+        "13": {
+          "key": 13,
+          "value": "El derecho a la privacidad"
+        },
+        "14": {
+          "key": 14,
+          "value": "La libertad de expresión"
+        },
+        "15": {
+          "key": 15,
+          "value": "El código como expresión"
+        },
+        "16": {
+          "key": 16,
+          "value": "BITCOIN"
+        }
+      },
+      "shareButtonLabel": "Compartir en 𝕏",
+      "shareButtonLinkText": "He firmado el #BitcoinManifest! ¿Sos un defensor de Bitcoin? ¿Recibiste tu invitación?"
+    },
+    "Manifest": {
+      "title": "Quienes somos",
+      "button": "Únetenos con tu cuenta de 𝕏",
+      "body": "Somos los que promovemos el dinero fuerte basado en código, matemáticas y energía;<br>Somos los que defendemos el derecho a la privacidad, al anonimato y a la libertad;<br>Somos los que empoderamos a través de la propiedad descentralizada y la inclusión financiera;<br><b>SOMOS LOS DEFENSORES DE BITCOIN.<b/>"
+    },
+    "Supporters": {
+      "idea": "Idea",
+      "powered": "Desarrollado por"
+    },
+    "LargestB": {
+      "title": "El logo humano de Bitcoin más grande del mundo",
+      "button": "Descargue material multimedia en alta resolución",
+      "body": "En 2023, en tiempos de ataques activos a la libertad de Bitcoin a través de las “Travel Rules”, el KYC y el advenimiento de las CBDC, la ONG Bitcoin Argentina reunió a más de 500 entusiastas de Bitcoin para crear la \"₿ más grande del mundo” en defensa y proclamación de la Revolución Bitcoin y los pilares de su libertad monetaria con cientos de paraguas naranjas formando un gigantesco logo de Bitcoin de 40 metros de altura."
+    },
+    "InvalidInvite": {
+      "title": "Invitación inválida",
+      "description": "No puedes ingresar sin una invitación válida"
+    },
+    "InvitesDialog": {
+      "title": "Invita a tus amigos a unirse",
+      "subtitle": "Invita a tus amigos",
+      "description": "Todos los amigos que invites tendrán acceso al sitio",
+      "inputActionLabel": "Copiar",
+      "footer": "Ten en cuenta que solo puedes invitar 3 personas a unirse a la comunidad. Se han usado {invalidInvites} invitaciones`"
+    }
+  }
+}
