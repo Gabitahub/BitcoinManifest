@@ -6,11 +6,12 @@
   },
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "prisma generate && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "studio": "prisma studio"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",

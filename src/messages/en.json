@@ -101,7 +101,7 @@
             "subtitle": "Invite your friends",
             "description": "All invited people will be granted with access to the site.",
             "inputActionLabel": "Copy",
-            "footer": "Take into account, you can only invite three people to join our community. {invalidInvites} invite has been taken"
+            "footer": "Take into account, you can only invite five (5) people to join our community. {invalidInvites} invite has been taken"
         }
     }
 }

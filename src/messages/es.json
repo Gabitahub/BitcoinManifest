@@ -101,7 +101,7 @@
       "subtitle": "Invita a tus amigos",
       "description": "Todos los amigos que invites tendrán acceso al sitio",
       "inputActionLabel": "Copiar",
-      "footer": "Ten en cuenta que solo puedes invitar 3 personas a unirse a la comunidad. Se han usado {invalidInvites} invitaciones`"
+      "footer": "Ten en cuenta que solo puedes invitar cinco (5) personas a unirse a la comunidad. Se han usado {invalidInvites} invitaciones`"
     }
   }
 }
