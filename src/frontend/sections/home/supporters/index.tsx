@@ -31,7 +31,7 @@ export default function HomeSupporters() {
               src={SUPPORTERS[0].src}
               alt={SUPPORTERS[0].alt}
               fill
-              objectFit={"contain"}
+              style={{objectFit: "contain"}}
             />
           </a>
         </div>
@@ -47,7 +47,7 @@ export default function HomeSupporters() {
               src={SUPPORTERS[1].src}
               alt={SUPPORTERS[1].alt}
               fill
-              objectFit={"contain"}
+              style={{objectFit: "contain"}}
             />
           </a>
         </div>

@@ -11,7 +11,7 @@ export default function HomeHourManifest({ urlToken }: any) {
       className="overflow-hidden mt-[180px] xl:mt-0 xl:h-screen flex flex-col justify-center"
     >
       <h2 className="mb-9">{t("title")}</h2>
-      <p dangerouslySetInnerHTML={{__html: t.raw('body')}} className="text-[1.5rem]" />
+      <div dangerouslySetInnerHTML={{__html: t.raw('body')}} className="text-[1.5rem]" />
       <div className="mt-10 xl:mt-[90px]">
         <SignButton label={t("button")} urlToken={urlToken} />
       </div>

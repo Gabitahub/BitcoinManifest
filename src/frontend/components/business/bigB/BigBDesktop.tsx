@@ -4,7 +4,7 @@ import AvatarsGraph from "./AvatarsGraphs";
 import { isMobile, isSafari } from "@/frontend/utils";
 import PresenceAnimation from "../../ui/Animations/PresenceAnimation";
 import { User } from "@/backend/entities/users/domain/UserDomain";
-
+import clsx from 'clsx';
 const BigBDesktop = ({
   users,
   me,
@@ -12,11 +12,17 @@ const BigBDesktop = ({
   users: any[];
   me: User | null | undefined;
 }) => {
-  const showComponent = !isSafari() && !isMobile();
+  const showComponent = !isMobile();
   return (
     <PresenceAnimation el="div">
       {showComponent && (
-        <div className="h-[100vh] w-[100%] lg:h-[90vh]">
+        <div className={clsx(
+            'w-[100%]',
+            {
+              'bit ': isSafari(),
+              'h-[100vh] lg:h-[90vh]': !isSafari()
+            },
+        )}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="100%"

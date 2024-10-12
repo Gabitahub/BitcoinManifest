@@ -14,7 +14,7 @@ const PopOverCard = React.memo(({name, image, displayName, sub} : ITCardProps) =
   return (
     <div className="bg-white grid grid-cols-3 gap-4 relative max-h-[106px]">
       <div className="col-span-1 space-y-2 relative h-[106px]">
-        <Image src={image} alt="" fill objectFit="cover" />
+        <Image src={image} alt="" fill style={{objectFit: "cover"}}/>
       </div>
       <a className="col-span-2 space-y-2 p-4" target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/user?user_id=${twitterId}`}>
         <h4 className="font-medium font-poppins text-lg leading-normal text-orange_primary">{name}</h4>

@@ -46,8 +46,8 @@ export default function WorldLargestB({ urlToken }: any) {
                         placeholder="blur"
                         src={src}
                         alt="supporter 0x"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        style={{objectFit: "cover"}}
                         className="rounded-[30px] xl:rounded-[50px] 2xl:rounded-[70px]"
                       />
                     </div>
