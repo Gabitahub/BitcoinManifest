@@ -1,5 +1,4 @@
 "use client";
-import { TInvite } from "@/backend/entities/users/domain/UserDomain";
 import PresenceAnimation from "@/frontend/components/ui/Animations/PresenceAnimation";
 import TypingAnimation from "@/frontend/components/ui/Animations/TypingAnimation";
 import { useToast } from "@/frontend/components/ui/use-toast";
@@ -7,13 +6,11 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import { useEffect, useState } from "react";
 
 export default function HomeHero({
-  urlToken,
   head,
   prehead,
   invalidInviteTitle,
   invalidInviteDescription,
 }: {
-  urlToken: TInvite & { valid: boolean };
   head: string | string[];
   prehead: string;
   invalidInviteTitle: string;
@@ -41,21 +38,15 @@ export default function HomeHero({
   }, []);
 
   useEffect(() => {
-    if (user && !dbUser && !urlToken) {
+    debugger;
+    if (user && !dbUser) {
       toast({
         variant: "destructive",
         title: invalidInviteTitle,
         description: invalidInviteDescription,
       });
     }
-  }, [
-    user,
-    dbUser,
-    urlToken,
-    invalidInviteTitle,
-    invalidInviteDescription,
-    toast,
-  ]);
+  }, [user, dbUser, invalidInviteTitle, invalidInviteDescription, toast]);
   return (
     <section>
       <PresenceAnimation className="font-syncopate max-md:text-center" el="h1">

@@ -1,19 +1,39 @@
 import { createUser } from "@/backend/entities/users/application/create/createUser";
 import { getUser } from "@/backend/entities/users/application/get/getUser";
+import { UserRepository } from "@/backend/entities/users/domain/UserRepository";
 import { apiUserRepository } from "@/backend/entities/users/infra/ApiUserRepository";
 import {
-  LoginOptions,
+  Claims,
   Session,
   handleAuth,
   handleCallback,
   handleLogin,
   handleLogout,
-  handleProfile,
+  handleProfile
 } from "@auth0/nextjs-auth0";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 
 const userRepository = apiUserRepository();
+
+async function getOrCreateUser(userRepository: UserRepository, user: Claims, state: any){
+  let currentUser = await getUser(userRepository)(user.sid);
+
+  if (!currentUser) {
+    currentUser = await createUser(userRepository)(
+      {
+        sid: user.sid as string,
+        sub: user.sub as string,
+        name: user.name as string,
+        image: user.picture,
+        displayName: user.nickname,
+      }
+    );
+  }
+  return currentUser;
+}
+
+
 // Use this to add or remove claims on session updates
 const afterCallback = async (
   req: NextRequest,
@@ -23,22 +43,7 @@ const afterCallback = async (
   try {
     if (session?.user) {
       const user = session.user;
-      let currentUser = await getUser(userRepository)(user.sid);
-
-      if (!currentUser) {
-        const { invitation } = state;
-
-        currentUser = await createUser(userRepository)(
-          {
-            sid: user.sid as string,
-            sub: user.sub as string,
-            name: user.name as string,
-            image: user.picture,
-            displayName: user.nickname,
-          },
-          invitation || ""
-        );
-      }
+      const currentUser = await getOrCreateUser(userRepository, user, state)
       return { ...session, user: { ...session.user, dbUser: currentUser } };
     }
     return session;
@@ -67,14 +72,6 @@ const afterRefetch: any = async (
   }
 };
 
-const getLoginState = (req: NextApiRequest, _loginOptions: LoginOptions) => {
-  const url = new URL(req.url ?? "");
-
-  return {
-    invitation: url.searchParams.get("invitation"),
-  };
-};
-
 export const GET = handleAuth({
   callback: handleCallback({ afterCallback: afterCallback as any }),
   logout: async (req: NextApiRequest, res: NextApiResponse) => {
@@ -87,13 +84,11 @@ export const GET = handleAuth({
   login: (req: NextApiRequest, res: NextApiResponse) => {
     return handleLogin(req, res, {
       returnTo: "/congrats",
-      getLoginState,
     }) as NextResponse;
   },
   signup: (req: NextApiRequest, res: NextApiResponse) => {
     return handleLogin(req, res, {
       returnTo: "/congrats",
-      getLoginState,
     }) as NextResponse;
   },
   me: async (req: any, res: any) => {

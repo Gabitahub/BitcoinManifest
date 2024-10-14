@@ -2,7 +2,7 @@ import ScrollingAnimation from "@/frontend/components/ui/Animations/ScrollAnimat
 import { useTranslations } from "next-intl";
 import SignButton from "@/frontend/components/business/signButton";
 
-export default function HomeHourManifest({ urlToken }: any) {
+export default function HomeHourManifest(/* { urlToken }: any */) {
   const t = useTranslations("Home.Manifest");
 
   return (
@@ -13,7 +13,7 @@ export default function HomeHourManifest({ urlToken }: any) {
       <h2 className="mb-9">{t("title")}</h2>
       <p dangerouslySetInnerHTML={{__html: t.raw('body')}} className="text-[1.5rem]" />
       <div className="mt-10 xl:mt-[90px]">
-        <SignButton label={t("button")} urlToken={urlToken} />
+        <SignButton label={t("button")} /* urlToken={urlToken} */ />
       </div>
     </ScrollingAnimation>
   );
