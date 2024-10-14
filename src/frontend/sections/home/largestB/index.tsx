@@ -1,8 +1,4 @@
 import { Card } from "@/frontend/components/ui/card";
-import Image from "next/image";
-import bitcoinB2 from "../../../../../public/assets/bitcoinB-2.jpg";
-import bitcoinB3 from "../../../../../public/assets/bitcoinB-3.webp";
-import bitcoinB5 from "../../../../../public/assets/bitcoinB-5.jpg";
 import {
   Carousel,
   CarouselContent,
@@ -11,11 +7,13 @@ import {
   CarouselPrevious,
 } from "@/frontend/components/ui/carousel";
 import { useTranslations } from "next-intl";
-import SignButton from "@/frontend/components/business/signButton";
-import Link from "next/link";
+import Image from "next/image";
+import bitcoinB2 from "../../../../../public/assets/bitcoinB-2.jpg";
+import bitcoinB3 from "../../../../../public/assets/bitcoinB-3.webp";
+import bitcoinB5 from "../../../../../public/assets/bitcoinB-5.jpg";
 
 const BIMAGES = [bitcoinB2, bitcoinB3, bitcoinB5];
-export default function WorldLargestB({ urlToken }: any) {
+export default function WorldLargestB() {
   const t = useTranslations("Home.LargestB");
 
   return (

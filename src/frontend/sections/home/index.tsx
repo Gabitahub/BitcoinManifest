@@ -1,20 +1,19 @@
-import { TInvite, User } from "@/backend/entities/users/domain/UserDomain";
+import { User } from "@/backend/entities/users/domain/UserDomain";
+import BigB from "@/frontend/components/business/bigB";
+import SignButton from "@/frontend/components/business/signButton";
+import DivAnimated from "@/frontend/components/ui/Animations/DivAnimated";
+import { ShareXButtonClient } from "@/frontend/components/ui/ShareOnXButton";
+import { useTranslations } from "next-intl";
 import HomeHero from "./hero";
 import WorldLargestB from "./largestB";
 import HomeHourManifest from "./ourManifest";
 import HomeSupporters from "./supporters";
-import BigB from "@/frontend/components/business/bigB";
-import DivAnimated from "@/frontend/components/ui/Animations/DivAnimated";
-import { useTranslations } from "next-intl";
-import SignButton from "@/frontend/components/business/signButton";
-import { ShareXButtonClient } from "@/frontend/components/ui/ShareOnXButton";
 
 export default function HomePage({
-  urlToken,
+  // urlToken,
   me,
   hasSigned,
 }: {
-  urlToken: TInvite & { valid: boolean };
   me: User | undefined | null;
   hasSigned: boolean;
 }) {
@@ -37,19 +36,23 @@ export default function HomePage({
         <div className="w-full flex-grow-0">
           <div className="xl:h-screen flex flex-col justify-center max-md:items-center">
             <HomeHero
-              urlToken={urlToken}
               head={wordage.head}
               prehead={wordage.prehead}
               invalidInviteTitle={tInvalidInvite("title")}
               invalidInviteDescription={tInvalidInvite("description")}
             />
             <div className="flex flex-col lg:flex-row gap-10 items-center">
-              <SignButton label={tHero("signButton")} urlToken={urlToken} />
-              { hasSigned && <ShareXButtonClient label={tHero("shareButtonLabel")} linkText={tHero("shareButtonLinkText")} />}
+              <SignButton label={tHero("signButton")} />
+              {hasSigned && (
+                <ShareXButtonClient
+                  label={tHero("shareButtonLabel")}
+                  linkText={tHero("shareButtonLinkText")}
+                />
+              )}
             </div>
           </div>
           <DivAnimated>
-            <HomeHourManifest urlToken={urlToken} />
+            <HomeHourManifest />
           </DivAnimated>
           <DivAnimated>
             <HomeSupporters />
@@ -61,7 +64,7 @@ export default function HomePage({
           </div>
         </div>
       </div>
-      <WorldLargestB urlToken={urlToken} />
+      <WorldLargestB />
     </div>
   );
 }

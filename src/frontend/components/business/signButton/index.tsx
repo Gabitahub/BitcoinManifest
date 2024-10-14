@@ -1,14 +1,10 @@
-import { TInvite } from "@/backend/entities/users/domain/UserDomain";
-import { InvitesDialog } from "@/frontend/components/business/hero/InvitesDialog";
 import { Button } from "@/frontend/components/ui/button";
 import { getSession } from "@auth0/nextjs-auth0";
 import Link from "next/link";
 
 export default async function SignButton({
-  urlToken,
   label,
 }: {
-  urlToken: TInvite & { valid: boolean };
 
   label: string;
 }) {
@@ -19,11 +15,11 @@ export default async function SignButton({
 
   return !hasSigned ? (
     <Button>
-      <Link href={`/api/auth/login?invitation=${urlToken?.token}`}>
+      <Link href={`/api/auth/login`}>
         {label}
       </Link>
     </Button>
   ) : (
-    <InvitesDialog invites={dbUser?.UrlTokens} />
+    <></>
   );
 }
