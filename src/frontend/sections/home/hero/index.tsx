@@ -38,7 +38,6 @@ export default function HomeHero({
   }, []);
 
   useEffect(() => {
-    debugger;
     if (user && !dbUser) {
       toast({
         variant: "destructive",

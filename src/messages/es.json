@@ -4,7 +4,8 @@
       "prehead": "Nosotros creemos en",
       "preheadSigned": "FELICIDADES",
       "headSigned": "GRACIAS POR FIRMAR",
-      "signButton": "Únetenos con tu cuenta de 𝕏",
+      "signWithXButton": "Únetenos con tu cuenta de 𝕏",
+      "signWithNostrError": "Ocurrió un error durante el inicio de sesión de Nostr. Por favor, inténtalo de nuevo.",
       "head": {
         "0": {
           "key": 0,

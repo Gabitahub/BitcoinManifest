@@ -19,7 +19,7 @@ export default function WorldLargestB() {
   return (
     <section className="min-h-screen mt-[180px] flex flex-col justify-center">
       <Card>
-        <div className="grid grid-cols-2 gap-5 lg:gap-10 2xl:gap-20">
+        <div className="grid grid-cols-2 gap-5 lg:gap-5 2xl:gap-20">
           <div className="col-span-full xl:col-span-1 h-full flex items-center">
             <div>
               <p className="text-black_secondary text-base lg:text-lg">
