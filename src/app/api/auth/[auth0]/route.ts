@@ -1,9 +1,7 @@
-import { createUser } from "@/backend/entities/users/application/create/createUser";
 import { getUser } from "@/backend/entities/users/application/get/getUser";
-import { UserRepository } from "@/backend/entities/users/domain/UserRepository";
 import { apiUserRepository } from "@/backend/entities/users/infra/ApiUserRepository";
+import { getOrCreateUser, UserCreateData } from "@/backend/services/auth/index"
 import {
-  Claims,
   Session,
   handleAuth,
   handleCallback,
@@ -16,24 +14,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 const userRepository = apiUserRepository();
 
-async function getOrCreateUser(userRepository: UserRepository, user: Claims, state: any){
-  let currentUser = await getUser(userRepository)(user.sid);
-
-  if (!currentUser) {
-    currentUser = await createUser(userRepository)(
-      {
-        sid: user.sid as string,
-        sub: user.sub as string,
-        name: user.name as string,
-        image: user.picture,
-        displayName: user.nickname,
-      }
-    );
-  }
-  return currentUser;
-}
-
-
 // Use this to add or remove claims on session updates
 const afterCallback = async (
   req: NextRequest,
@@ -43,7 +23,14 @@ const afterCallback = async (
   try {
     if (session?.user) {
       const user = session.user;
-      const currentUser = await getOrCreateUser(userRepository, user, state)
+      const userCreateData: UserCreateData = {
+        sid: user.sid as string,
+        sub: user.sub as string,
+        name: user.name as string,
+        image: user.picture,
+        displayName: user.nickname,
+      };
+      const currentUser = await getOrCreateUser(userRepository, userCreateData)
       return { ...session, user: { ...session.user, dbUser: currentUser } };
     }
     return session;

@@ -4,7 +4,9 @@
             "prehead": "We believe in",
             "preheadSigned": "CONGRATS",
             "headSigned": "THANK YOU FOR SIGNING",
-            "signButton": "Join us with your 𝕏 account",
+            "signWithXButton": "Join us with your 𝕏 account",
+            "signWithNostr": "Join us with your Nostr account",
+            "signWithNostrError": "An error occurred during Nostr sign-in. Please try again.",
             "head": {
                 "0": {
                     "key": 0,
