@@ -1,6 +1,6 @@
 import { User } from "@/backend/entities/users/domain/UserDomain";
 import BigB from "@/frontend/components/business/bigB";
-import SignButton from "@/frontend/components/business/signButton";
+import SignButtons from "@/frontend/components/business/signButtons";
 import DivAnimated from "@/frontend/components/ui/Animations/DivAnimated";
 import { ShareXButtonClient } from "@/frontend/components/ui/ShareOnXButton";
 import { useTranslations } from "next-intl";
@@ -41,8 +41,12 @@ export default function HomePage({
               invalidInviteTitle={tInvalidInvite("title")}
               invalidInviteDescription={tInvalidInvite("description")}
             />
-            <div className="flex flex-col lg:flex-row gap-10 items-center">
-              <SignButton label={tHero("signButton")} />
+            <div className="flex flex-col lg:flex-row gap-5 items-center">
+              { !hasSigned && (
+                <SignButtons />
+
+              )
+              }
               {hasSigned && (
                 <ShareXButtonClient
                   label={tHero("shareButtonLabel")}
